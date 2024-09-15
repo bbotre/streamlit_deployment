@@ -54,6 +54,10 @@ applicant_income = st.number_input("Applicant Income", min_value=0, step=1000)
 loan_amount = st.number_input("Loan Amount", min_value=0, step=500)
 credit_history = st.selectbox("Credit History", ["Yes", "No"])
 
+gender1 = gender
+married1 = married
+credit_history1 = credit_history
+
 if gender == "Male":
     gender = 1
 else:
@@ -80,12 +84,13 @@ else:
 print("debug 00", result)
 # Display the entered information
 st.write("## Summary")
-st.write(f"**Gender:** {gender}")
-st.write(f"**Married:** {married}")
+st.write(f"**Gender:** {gender1}")
+st.write(f"**Married:** {married1}")
 st.write(f"**Applicant Income:** {applicant_income}")
 st.write(f"**Loan Amount:** {loan_amount}")
-st.write(f"**Credit History:** {credit_history}")
+st.write(f"**Credit History:** {credit_history1}")
 
 # Add some interactivity with a button
 if st.button('Submit'):
     st.write("Your loan status is", pred)
+    # st.write(f"Preprocessed inputs are : {gender, married, applicant_income, loan_amount, credit_history}")
